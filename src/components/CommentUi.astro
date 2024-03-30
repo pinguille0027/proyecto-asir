@@ -6,5 +6,5 @@ let response = await GET(Astro)
 const comments = await response.json()
 console.log(comments)
 ---
-<h1>cometarios</h1>
-<h1>{comments[0].contenido}</h1>
+<h1>comentarios</h1>
+{Array.isArray(comments) && comments.length > 0 ? <h1>{comments[0].contenido}</h1> : <p>sin comentarios</p>}
