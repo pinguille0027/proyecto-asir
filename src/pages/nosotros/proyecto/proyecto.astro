@@ -7,6 +7,6 @@ const allPosts = await getCollection("proyecto");
 <Layeout title="Blog del Proyecto">
   <h1>blog del proyecto</h1>
   <ul>
-    {allPosts.map((post) => <li><a href={`/nosotros/proyecto/${post.slug}`}>{post.data.title}</a></li>)}
+    {allPosts.map((post:any) => <li><a href={`/nosotros/proyecto/${post.slug}`}>{post.data.title}</a></li>)}
   </ul>
 </Layeout>

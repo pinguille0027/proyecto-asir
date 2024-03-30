@@ -1,0 +1,10 @@
+---
+export const prerender = false;
+import { GET } from '../api/comments.ts'
+
+let response = await GET(Astro)
+const comments = await response.json()
+console.log(comments)
+---
+<h1>cometarios</h1>
+<h1>{comments[0].contenido}</h1>
