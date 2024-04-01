@@ -1,14 +1,16 @@
 ---
 title: 'Reunión preliminar'
 pubDate: 2024-03-27
-author: 'Alumno de Astro'
+author: 
+  name: 'Guillermo Orio Fernández'
+  email: 'guillermo.orio27@gmail.com'
 type: 'proyecto'
 id: 1
 tags: ["reunión", "idea", "desarrollo técnico", "blog"]
 ---
-# Reunión preliminar
+# {frontmatter.title}
 
-Publicado el: 2024-03-27
+Publicado el: {new Date(frontmatter.pubDate).toLocaleDateString('es-ES')} por {frontmatter.author.name}
 
 Esta fue nuestra primera reunión tras unos días de descanso que aprovechamos para inspirarnos y plantear un borrador.
 

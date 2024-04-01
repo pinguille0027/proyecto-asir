@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
+    "@astrojs/mdx": "^2.2.2",
     "@astrojs/vercel": "^7.5.0",
     "@supabase/supabase-js": "^2.41.1",
     "astro": "^4.5.10",
