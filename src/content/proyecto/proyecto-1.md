@@ -1,28 +1,23 @@
 ---
-title: 'Mi primera publicación en el blog'
-pubDate: 2022-07-01
-description: 'Este es la primera publicación de mi nuevo blog Astro.'
+title: 'Reunión preliminar'
+pubDate: 2024-03-27
 author: 'Alumno de Astro'
+type: 'proyecto'
 id: 1
-image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
-    alt: 'El logotipo completo de Astro.'
-tags: ["astro", "bloguear", "aprender en público"]
+tags: ["reunión", "idea", "desarrollo técnico", "blog"]
 ---
-# Mi primera publicación en el blog
+# Reunión preliminar
 
-Publicado el: 2022-07-01
+Publicado el: 2024-03-27
 
-¡Bienvenido a mi _nuevo blog_ sobre el aprendizaje de Astro! Aquí, voy a compartir mi viaje de aprendizaje a medida que construyo un nuevo sitio web.
+Esta fue nuestra primera reunión tras unos días de descanso que aprovechamos para inspirarnos y plantear un borrador.
 
-## Lo que he conseguido
+## Lo que acordamos:
 
-1. **Instalación de Astro**: En primer lugar, he creado un nuevo proyecto Astro y configurar mis cuentas en línea.
+1. **Crear nuestro propio blog usando Astro**: De esta manera aprovechamos para ver un nuevo y flexible framework que está ganando bastante popularidad.
 
-2. **Creación de páginas**: Luego aprendí cómo hacer páginas creando nuevos archivos `.astro` y colocándolos en la carpeta `src/pages/`.
+2. **Un primer reparto de tareas**
 
-3. **Creación de publicaciones**: ¡Esta es mi primera publicación! ¡Ahora tengo páginas de Astro y publicaciónes en Markdown!
+3. **Detallar algo la idea de negocio**: Estuvimos hablando sobre algunas tecnologías de monitorización (stack ELK) y como podríamos ofrecer un servicio.
 
-## Próximos pasos
-
-Terminaré el tutorial de Astro, y luego seguiré añadiendo más publicaciones. Mira este espacio para más por venir.
+4. **Ver Como planteamos la parte técnica**: Aunque aún no tenemos claro como plantearlo (al proponer un negocio más orientado a la consultoría de infraestructura), lo más probable es que hagamos una simulación de algún servicio de hosting, también dependerá de lo que veamos en las prácticas y lo que tengamos disponible.
