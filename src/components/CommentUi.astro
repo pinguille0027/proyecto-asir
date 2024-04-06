@@ -1,6 +1,5 @@
 ---
-export const prerender = false;
-import { map } from 'astro/zod';
+
 import { GET } from '../api/comments.ts'
 
 let response = await GET(Astro)
@@ -8,4 +7,13 @@ const comments = await response.json()
 console.log(comments)
 ---
 <h1>comentarios</h1>
-{Array.isArray(comments) && comments.length > 0 ? comments.map((comment) => <h1>{comment.contenido}</h1>) : <p>sin comentarios</p>}
+{Array.isArray(comments) && comments.length > 0 ? comments.map((comment) =>
+  <article>
+ <header>
+  <h4>{comment.autor}</h4> 
+  </header>
+ 
+ </article>
+ ) : <p>sin comentarios</p>
+ 
+ }

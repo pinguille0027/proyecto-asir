@@ -1,0 +1,13 @@
+---
+import Layeout from "../../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("fct_guille");
+console.log(allPosts)
+---
+
+<Layeout title="Blog del Proyecto">
+  <h1>blog del proyecto</h1>
+  <ul>
+    {allPosts.map((post:any) => <li><a href={`/nosotros/Guillermo_Orio/${post.slug}`}>{post.data.title}</a></li>)}
+  </ul>
+</Layeout>

@@ -2,6 +2,7 @@
 import Layeout from "../../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 const allPosts = await getCollection("proyecto");
+console.log(allPosts)
 ---
 
 <Layeout title="Blog del Proyecto">
