@@ -1,0 +1,179 @@
+---
+const { pathname } = Astro.url;
+const subpath = pathname.match(/[^/]+/g);
+---
+
+<nav>
+  <a
+    href="/"
+    class={pathname === "/contacto" || "/" + subpath?.[0] === "/contacto"
+      ? "activo"
+      : " "}
+  >
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="contacto"
+    >
+      <g id="ic-contact-edit-contact">
+        <path
+          class="cls-1"
+          d="M22,12.27v4.37a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V7.36a2,2,0,0,1,2-2h6.76"
+        ></path>
+
+        <path
+          class="cls-2"
+          d="M19.3,4.25a1,1,0,0,0-1.42,0l-6,6h0l-.1,3a.21.21,0,0,0,.23.22l3-.1h0l6-6A1,1,0,0,0,21,6Z"
+        ></path>
+      </g>
+    </svg>
+  </a>
+  <a
+    href="/proyecto/"
+    class={pathname === "/proyecto" || "/" + subpath?.[0] === "/proyecto"
+      ? "activo"
+      : " "}
+  >
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 512 512"
+      xml:space="preserve"
+      class="proyecto"
+    >
+      <path
+        d="M490.171,71.458V41.046h-22.302H271.206V0h-30.412v41.046H44.131H21.829v30.412h22.302v277.63H21.829V379.5h22.302
+       h112.028l-26.557,126.239l29.76,6.261l15.584-74.08h65.847v73.992h30.412V437.92h65.847L352.636,512l29.76-6.261L355.839,379.5
+       h112.028h22.302v-30.412h-22.302V71.458H490.171z M240.794,407.508h-59.449l5.892-28.008h53.557V407.508z M271.207,407.508V379.5
+       h53.557l5.892,28.008H271.207z M437.457,349.088H74.543V71.458h362.914V349.088z"
+      ></path>
+    </svg>
+  </a>
+  <a
+    href="/nosotros/"
+    class={pathname === "/nosotros" || "/" + subpath?.[0] === "/nosotros"
+      ? "activo"
+      : " "}
+  >
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="nosotros"
+    >
+      <circle cx="12" cy="3.41" r="1.91"></circle>
+      <path
+        d="M9.14,8.18h0A2.86,2.86,0,0,1,12,5.32h0a2.86,2.86,0,0,1,2.86,2.86h0"
+      ></path>
+      <circle cx="19.64" cy="14.86" r="1.91"></circle>
+      <path
+        d="M16.77,19.64h0a2.86,2.86,0,0,1,2.87-2.87h0a2.86,2.86,0,0,1,2.86,2.87h0"
+      ></path>
+      <circle cx="4.36" cy="14.86" r="1.91"></circle>
+      <path
+        d="M1.5,19.64h0a2.86,2.86,0,0,1,2.86-2.87h0a2.86,2.86,0,0,1,2.87,2.87h0"
+      ></path>
+      <path d="M2.47,11.37A9.53,9.53,0,0,1,7.38,3.65"></path>
+      <path d="M16.62,3.65a9.53,9.53,0,0,1,4.91,7.72"></path>
+      <path d="M8.39,21.79a9.53,9.53,0,0,0,7.22,0"></path>
+    </svg>
+  </a>
+  <a
+    href=""
+    class={pathname === "/escuela" || "/" + subpath?.[0] === "/escuela"
+      ? "activo"
+      : " "}
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="escuela"
+    >
+      <path
+        d="M21 10L12 5L3 10L6 11.6667M21 10L18 11.6667M21 10V10C21.6129 10.3064 22 10.9328 22 11.618V16.9998M6 11.6667L12 15L18 11.6667M6 11.6667V17.6667L12 21L18 17.6667L18 11.6667"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>
+  </a>
+</nav>
+<style>
+  nav {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    align-items: center;
+    margin-right: 1rem;
+  }
+  nav:hover {
+  }
+  a {
+    padding: 0.5rem;
+    border-radius: 4px;
+    /* border-radius: 9999px;*/
+    box-shadow:
+      0px 0px 0px 0px rgba(19, 21, 26, 0.3),
+      0px 1px 2px 0px rgba(19, 21, 26, 0.29),
+      0px 4px 4px 0px rgba(19, 21, 26, 0.26),
+      0px 10px 6px 0px rgba(19, 21, 26, 0.15),
+      0px 17px 7px 0px rgba(19, 21, 26, 0.04),
+      0px 26px 7px 0px rgba(19, 21, 26, 0.01);
+    line-height: 0%;
+  }
+  a:hover {
+    background-color: rgba(var(--turquesa), 0.25);
+  }
+  .activo {
+    background-color: rgba(var(--turquesa), 0.75);
+    .proyecto {
+      fill: rgb(var(--fondo));
+    }
+    .nosotros, .contacto,
+    .escuela {
+      stroke: rgb(var(--fondo));
+    }
+  }
+  .activo:hover {
+    background-color: rgba(var(--turquesa), 0.75);
+  }
+  svg {
+    width: 24px;
+  }
+  .proyecto {
+    fill: rgb(var(--turquesa));
+  }
+  .nosotros, .contacto,
+  .escuela {
+    stroke: rgb(var(--turquesa));
+    fill: none;
+  }
+  .nosotros {
+    stroke-miterlimit: 10;
+    stroke-width: 1.91px;
+  }
+  .contacto {
+      stroke-linecap: round;
+      stroke-width: 1.5px;
+    .cls-1 {
+      stroke-linejoin: bevel;
+      fill-rule: evenodd;
+    }
+    .cls-2 {
+      stroke-linejoin: round;
+    }
+  }
+  @media (width <= 700px) {
+    nav {
+      gap: 0.75rem;
+      margin-right: 0.75rem;
+    }
+    svg {
+      width: 18px;
+    }
+    a {
+      padding: 0.38rem;
+    }
+  }
+</style>
