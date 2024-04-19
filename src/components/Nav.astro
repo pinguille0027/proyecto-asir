@@ -127,14 +127,16 @@ const subpath = pathname.match(/[^/]+/g);
   }
   .activo {
     background-color: rgba(var(--turquesa), 0.75);
-    .proyecto {
+    
+    
+  }
+  .activo .proyecto {
       fill: rgb(var(--fondo));
     }
-    .nosotros, .contacto,
+  .activo .nosotros, .contacto,
     .escuela {
       stroke: rgb(var(--fondo));
     }
-  }
   .activo:hover {
     background-color: rgba(var(--turquesa), 0.75);
   }
