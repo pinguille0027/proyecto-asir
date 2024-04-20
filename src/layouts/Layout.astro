@@ -65,18 +65,28 @@ const { title, author } = Astro.props;
     font-family: system-ui, sans-serif;
     background: rgb(var(--fondo));
     color: white;
-    background-size: 224px;
+    height: 100%;
   }
   * {
     margin: 0;
 		padding: 0;
+  }
+  body{
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    height: 100%;
   }
 	main{
 		max-width: 700px;
 		margin: 0 auto;
 		padding: 4rem;
 		margin-top: 5rem;
+    flex: 1;
 	}
+  Footer{
+    flex-shrink: 0;
+  }
 	@media(width <= 700px) {
 		main{
 			padding: 2rem;
