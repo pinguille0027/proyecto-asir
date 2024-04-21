@@ -5,13 +5,14 @@ import type { APIRoute } from "astro";
 export const GET: APIRoute = async ({ request, params, props }) => {
   const { data, error } = await supabase
     .from("comentarios")
-    .select()
+    .select(`
+    id, created_at, perfiles ( nombre ), contenido, id_ref
+    `)
     .eq("id_post", `${params.slug}`);
 
   if (error || !data) {
     return new Response(error.message, { status: 500 });
   }
-
   const comentariosAgrupados:any = {};
   // Recorremos el array de comentarios para agruparlos
   data.forEach(comentario => {
