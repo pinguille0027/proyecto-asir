@@ -36,7 +36,6 @@ export const GET: APIRoute = async ({ request, params, props }) => {
   
   const comentariosReestructurados = Object.values(comentariosAgrupados);
   
-  console.log(comentariosReestructurados);
 
   return new Response(JSON.stringify(comentariosReestructurados), { status: 200 });
 };

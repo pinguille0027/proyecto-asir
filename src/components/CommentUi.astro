@@ -4,7 +4,6 @@ import { GET } from '../api/comments.ts'
 
 let response = await GET(Astro)
 const comments = await response.json()
-console.log(comments)
 ---
 <h1>comentarios</h1>
 {Array.isArray(comments) && comments.length > 0 ? comments.map((comment) =>
