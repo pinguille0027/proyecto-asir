@@ -1,0 +1,28 @@
+---
+const {reply}=Astro.props
+---
+
+<article class={Array.isArray(reply.respuestas) && reply.respuestas.length > 0 ? 'hilo' : ''}>
+  <section>
+    <h4>{reply.perfiles.nombre}</h4> 
+   </section>
+   <section>
+    <p>{reply.contenido}</p>
+   </section>
+    <section><span>{new Date(reply.created_at).toLocaleDateString('es-ES')}</span></section>
+  
+  <section>
+    {Array.isArray(reply.respuestas) && reply.respuestas.length > 0 ? reply.respuestas.map((respuesta:any) =>
+    <Astro.self reply={respuesta}/>
+    
+    ) : null}
+  </section>
+</article>
+<style>
+  article{
+      padding-left: 0.5rem;
+    }
+  .hilo{
+    border-left: 1px solid white;
+  }
+</style>
