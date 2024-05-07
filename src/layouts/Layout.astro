@@ -53,7 +53,8 @@ const { title, author } = Astro.props;
 </html>
 <style is:global>
   :root {
-    --fondo: 9, 19, 25;
+    --oscuro:9, 19, 25;
+    --blanco:255,255,255;
     --celeste: 153, 215, 255;
     --turquesa: 42, 129, 168;
     --morado: 55, 42, 98;
@@ -71,8 +72,12 @@ const { title, author } = Astro.props;
   }
   .background .pattern{
     stroke-width: 0.75;
-    stroke: rgba(var(--turquesa), 0.12);
+    stroke: rgba(var(--secundario), 0.25);
+    
     fill: none;
+  }
+  .dark .background .pattern{
+    stroke: rgba(var(--secundario), 0.12);
   }
   a {
     text-decoration: none;
@@ -98,11 +103,20 @@ const { title, author } = Astro.props;
   li > strong:first-child {
     font-size: 1.05rem;
   }
-  html {
+  html{
+    --fondo: var(--blanco);
+    --secundario: var(--turquesa);
+    --terciario: var(--azul);
+    
     font-family: system-ui, sans-serif;
-    background: rgb(var(--fondo));
-    color: white;
     height: 100%;
+    color: rgb(var(--oscuro));
+    transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  html.dark {
+    --fondo: var(--oscuro);
+    background: rgb(var(--fondo));
+    color: rgb(var(--blanco));
   }
   * {
     margin: 0;
@@ -120,7 +134,7 @@ const { title, author } = Astro.props;
     padding: 4rem;
     margin-top: 7rem;
     flex: 1;
-    background-color: rgba(var(--fondo), 0.9);
+    background-color: rgba(var(--fondo), 0.75); /*revisar*/
   }
   Footer {
     flex-shrink: 0;
@@ -145,6 +159,6 @@ const { title, author } = Astro.props;
   }
   a {
     text-decoration: none;
-    color: white;
+    color: inherit;
   }
 </style>
