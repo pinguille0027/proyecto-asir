@@ -5,38 +5,57 @@ import type { APIRoute } from "astro";
 export const GET: APIRoute = async ({ request, params, props }) => {
   const { data, error } = await supabase
     .from("comentarios")
-    .select()
+    .select(
+      `
+    id, created_at, perfiles ( nombre ), contenido, id_ref
+    `
+    )
     .eq("id_post", `${params.slug}`);
 
   if (error || !data) {
     return new Response(error.message, { status: 500 });
   }
 
-  const comentariosAgrupados:any = {};
-  // Recorremos el array de comentarios para agruparlos
-  data.forEach(comentario => {
-    if (comentario.id_ref) {
-      // Si el comentario tiene una referencia, lo agregamos como respuesta a su respectivo comentario padre
-      const comentarioPadre = comentariosAgrupados[comentario.id_ref];
-      if (comentarioPadre) {
-        // Si encontramos el comentario padre, agregamos esta respuesta a su arreglo de respuestas
-        if (!comentarioPadre.respuestas) {
-          comentarioPadre.respuestas = [];
+  const comentariosAgrupados: any = [];
+  function agruparComentarios(comentarios: any[]) {
+    comentarios.sort((a, b) => b.id - a.id);
+    const respuestasProcesadas: any = [];
+    comentarios.forEach((comentario) => {
+      if (respuestasProcesadas.find((resp:any) => resp.id_ref === comentario.id)) {
+        const respuestas = respuestasProcesadas.filter(
+          (respuesta:any) => respuesta.id_ref === comentario.id
+        );
+        if (respuestas.length > 0) {
+          if (!comentario.respuestas) {
+            comentario.respuestas = [];
+          }
+          comentario.respuestas.push(respuestas);
+          comentario.respuestas = comentario.respuestas.flat()
+          if (comentario.id_ref){
+            respuestasProcesadas.push(comentario)
+          } else{
+           comentariosAgrupados.push(comentario); 
+          }
+          
+          
         }
-        comentarioPadre.respuestas.push(comentario);
       } else {
-        // Si no encontramos el comentario padre, creamos un objeto para él y lo agregamos a comentariosAgrupados
-        comentariosAgrupados[comentario.id_ref] = { respuestas: [comentario] };
+        const respuestas = comentarios.filter(
+          (respuesta) => respuesta.id_ref === comentario.id
+        );
+        if (respuestas.length > 0) {
+          if (!comentario.respuestas) {
+            comentario.respuestas = [];
+          }
+          comentario.respuestas.push(respuestas);
+          comentario.respuestas = comentario.respuestas.flat()
+          respuestasProcesadas.push(comentario);
+        }
       }
-    } else {
-      // Si el comentario no tiene una referencia, lo agregamos directamente a comentariosAgrupados
-      comentariosAgrupados[comentario.id] = comentario;
-    }
+    });
+  }
+  agruparComentarios(data);
+  return new Response(JSON.stringify(comentariosAgrupados), {
+    status: 200,
   });
-  
-  const comentariosReestructurados = Object.values(comentariosAgrupados);
-  
-  console.log(comentariosReestructurados);
-
-  return new Response(JSON.stringify(comentariosReestructurados), { status: 200 });
 };

@@ -1,19 +1,16 @@
 ---
 
 import { GET } from '../api/comments.ts'
+import CommentCard from './CommentCard.astro';
 
 let response = await GET(Astro)
 const comments = await response.json()
-console.log(comments)
 ---
-<h1>comentarios</h1>
+<h1>Comentarios</h1>
 {Array.isArray(comments) && comments.length > 0 ? comments.map((comment) =>
-  <article>
- <header>
-  <h4>{comment.autor}</h4> 
-  </header>
- 
- </article>
- ) : <p>sin comentarios</p>
- 
+  <CommentCard comment={comment}/>
+  ) : <p>sin comentarios</p>
  }
+
+<style>
+</style>

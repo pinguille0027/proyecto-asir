@@ -1,0 +1,28 @@
+---
+import ReplyCard from "./ReplyCard.astro";
+const {comment}=Astro.props
+---
+
+
+<article class={Array.isArray(comment.respuestas) && comment.respuestas.length > 0 ? 'hilo' : ''}>
+  <section>
+   <h4>{comment.perfiles.nombre}</h4> 
+  </section>
+  <section>
+   <p>{comment.contenido}</p>
+  </section>
+   <section><span>{new Date(comment.created_at).toLocaleDateString('es-ES')}</span></section>
+   <section>{Array.isArray(comment.respuestas) && comment.respuestas.length > 0 ? comment.respuestas.map((respuesta:any) =>
+   <ReplyCard reply={respuesta}/>
+   ) : null}
+     </section>
+  </article>
+  <style>
+    article{
+      padding-left: 0.5rem;
+    }
+    .hilo{
+      border-left: 1px solid white;
+    }
+  </style>
+  
