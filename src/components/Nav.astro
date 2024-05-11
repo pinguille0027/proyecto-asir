@@ -131,10 +131,12 @@ const subpath = pathname.match(/[^/]+/g);
   }
   .activo .proyecto {
       fill: rgb(var(--fondo));
+      transition: fill 1s ease-out;
     }
   .activo .nosotros, .contacto,
     .escuela {
       stroke: rgb(var(--fondo));
+      transition: stroke 1s ease-out;
     }
   .activo:hover {
     background-color: rgba(var(--secundario), 0.75);
