@@ -4,21 +4,22 @@
 <svg xml:space="preserve" id="logo" version="1.1" viewBox="0 0 20.3 20.3" xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
   <defs id="defs2">
-    <linearGradient id="linearGradient76208">
-      <stop offset="0.65" class="stop_inicio" />
-      <stop offset="1" class="stop_final" />
+    <linearGradient id="gradientLogo">
+
     </linearGradient>
     <radialGradient xlink:href="#linearGradient76208" id="radialGradient76210-7-6-6" cx="139.36299" cy="157.79147"
       fx="139.36299" fy="157.79147" r="9.9529543" gradientUnits="userSpaceOnUse"
-      gradientTransform="matrix(0.92987653,0,0,0.92987653,9.7848923,11.064257)" />
+      gradientTransform="matrix(0.92987653,0,0,0.92987653,9.7848923,11.064257)">
+      <stop offset="0.65" class="stop_inicio" />
+      <stop offset="1" class="stop_final" />
+    </radialGradient>
     <filter style="color-interpolation-filters:sRGB" id="filter84299" x="-0.048" y="-0.048" width="1.096"
       height="1.096">
       <feGaussianBlur stdDeviation="0.37020073" id="feGaussianBlur84301" />
     </filter>
   </defs>
   <g transform="translate(-129.23178,-147.667331)">
-    <circle class="circulo"
-      cx="139.37527" cy="157.79083" r="9.2550182" />
+    <circle class="circulo" cx="139.37527" cy="157.79083" r="9.2550182" />
     <g id="g42829-8-6-1-8" transform="matrix(0.03872197,0,0,0.03872197,129.4595,147.88039)" class="globo_terraqueo">
       <path
         d="M 493.423,231.501 C 483.055,130.884 408.38,45.739 309.393,23.125 c -4.599,-1.058 -9.165,1.826 -10.214,6.426 -1.05,4.591 1.818,9.173 6.417,10.223 53.973,12.322 100.138,44.715 131.063,88.226 h -31.147 c -4.719,0 -8.533,3.823 -8.533,8.533 0,4.71 3.814,8.533 8.533,8.533 h 42.095 c 15.394,26.402 25.429,56.055 28.766,87.381 -6.537,2.799 -11.597,8.277 -13.995,15.019 H 409.6 c -4.719,0 -8.533,3.823 -8.533,8.533 0,4.71 3.814,8.533 8.533,8.533 h 52.779 c 3.533,9.916 12.911,17.067 24.021,17.067 14.114,0 25.6,-11.486 25.6,-25.6 0,-11.664 -7.885,-21.418 -18.577,-24.498 z m -7.023,33.032 c -4.71,0 -8.533,-3.831 -8.533,-8.533 0,-4.608 3.686,-8.32 8.252,-8.474 0.077,-0.009 0.137,-0.009 0.213,-0.009 0.051,-0.009 0.085,-0.034 0.136,-0.043 4.676,0.043 8.465,3.84 8.465,8.525 0,4.703 -3.823,8.534 -8.533,8.534 z"
@@ -51,8 +52,7 @@
     .circulo {
       /*con gradiente*/
       mix-blend-mode:normal;
-      fill:url(#radialGradient76210-7-6-6);
-      filter:url(#filter84299);
+      fill:url(#gradientLogo);
       /*sin gradiente*/
       fill:;
     }

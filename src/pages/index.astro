@@ -2,55 +2,255 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Infralabs" author="Guillermo Orio Fernández & Noelia Sánchez Domínguez">
-	<section>
-	<h1>Bienvenido a Infralabs</h1>
-	<h3>Elevando tu infraestructura al siguiente nivel de la mano de expertos</h3>
-	<p>Desde Infralabs ponemos diseñamos la arquitectura que necesitas y la mantenemos al día para que te puedas centrar en tu producto sin preocupaciones</p>
-	<a href="">Contacta ahora</a>
+<Layout
+  title="Infralabs"
+  author="Guillermo Orio Fernández & Noelia Sánchez Domínguez"
+>
+<div>
+	<section class="bienvenida">
+		<div class="serverContainer">
+			<svg
+				xml:space="preserve"
+				class="server"
+				version="1.1"
+				viewBox="0 0 37 45"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<defs id="defs2">
+					<linearGradient id="GradienteDirecto">
+						<stop offset="0" class="borde"></stop>
+						<stop offset="1" class="centro"
+						></stop>
+					</linearGradient>
+					<linearGradient id="GradienteReverso">
+						<stop offset="0" class="centro"
+						></stop>
+						<stop offset="1" class="borde"></stop>
+					</linearGradient>
+				</defs>
+				<g id="layer1" transform="translate(-3.0896199,-151.50811)">
+					<g id="g49752-7" transform="translate(-75.279672,38.922896)">
+						<path
+							d="m 78.818549,149.69758 17.69758,7.49597 -0.266134,-28.47581 -17.624554,-7.97673 z"
+							class="cara izquierda"></path>
+						<path
+							d="m 114.13038,120.84856 0.30285,28.81988 -17.855981,7.51547 -0.282921,-28.28875 z"
+							class="cara derecha"></path>
+						<path
+							d="m 96.116935,112.83871 -17.494179,7.84226 17.715953,8.16983 17.796821,-8.04659 z"
+							class="cara arriba"></path>
+						<path
+							style=""
+							d="m 96.159385,116.58448 -8.294349,3.59274 8.427424,4.21371 8.44957,-3.99194 z"
+							class="top"></path>
+						<path
+							d="m 64.908771,90.776198 c -1.11,-2.34086 -2.42842,-2.50114 -2.41587,-3.9206 l 0.0148,-1.67192 0.27792,-0.12372 a 0.22160769,0.34762788 38.609775 0 0 0.28067,-0.40259 l 0.005,-0.55732 a 0.22160769,0.34762788 38.609775 0 0 -0.2758,-0.15473 l -2.77556,1.23551 a 0.22160769,0.34762788 38.609775 0 0 -0.28077,0.40249 l -0.005,0.55731 a 0.22160769,0.34762788 38.609775 0 0 0.2759,0.15484 l 0.27782,-0.12361 -0.0148,1.67192 c -0.0127,1.41951 -1.34408,2.75935 -2.50458,6.11089 -0.36957,1.06652 -1.30964,2.80341 3.55071,0.63987 4.86003,-2.16339 3.9436,-3.07387 3.59023,-3.8186 z m -0.90593,1.37524 c -0.39053,0.29009 -1.16746,0.76888 -2.67511,1.44004 -1.50755,0.67109 -2.28199,0.88329 -2.67065,0.93959 -0.14224,0.0222 -0.18976,-0.11705 -0.1433,-0.2848 0.12118,-0.42587 0.36185,-1.1758 0.7982,-2.0878 1.06818,-2.2291 2.14189,-0.67765 3.05058,-1.08214 0.90847,-0.40439 0.66664,-1.16331 1.01473,-0.7275 a 6.8046849,10.67426 38.609778 0 1 0.7675,1.39085 c 0.0519,0.12415 -0.007,0.3102 -0.14944,0.41519 z"
+							transform="translate(44.189301,49.411286)"
+							class="matraz"></path>
+						<text
+							xml:space="preserve"
+							style=""
+							x="36.760441"
+							y="70.331139"
+							transform="matrix(1,0.44794199,0,1,44.189301,49.411286)"
+							class="texto"
+						>
+							<tspan x="36.760441" y="70.331139">Infralabs</tspan>
+						</text>
+						<g
+							transform="matrix(-2.4763832e-4,-0.01057206,-0.01787844,-3.4741363e-5,100.95638,122.94312)"
+							class="globo_terraqueo"
+						>
+							<path
+								d="M 493.423,231.501 C 483.055,130.884 408.38,45.739 309.393,23.125 c -4.599,-1.058 -9.165,1.826 -10.214,6.426 -1.05,4.591 1.818,9.173 6.417,10.223 53.973,12.322 100.138,44.715 131.063,88.226 h -31.147 c -4.719,0 -8.533,3.823 -8.533,8.533 0,4.71 3.814,8.533 8.533,8.533 h 42.095 c 15.394,26.402 25.429,56.055 28.766,87.381 -6.537,2.799 -11.597,8.277 -13.995,15.019 H 409.6 c -4.719,0 -8.533,3.823 -8.533,8.533 0,4.71 3.814,8.533 8.533,8.533 h 52.779 c 3.533,9.916 12.911,17.067 24.021,17.067 14.114,0 25.6,-11.486 25.6,-25.6 0,-11.664 -7.885,-21.418 -18.577,-24.498 z m -7.023,33.032 c -4.71,0 -8.533,-3.831 -8.533,-8.533 0,-4.608 3.686,-8.32 8.252,-8.474 0.077,-0.009 0.137,-0.009 0.213,-0.009 0.051,-0.009 0.085,-0.034 0.136,-0.043 4.676,0.043 8.465,3.84 8.465,8.525 0,4.703 -3.823,8.534 -8.533,8.534 z"
+								id="path42821-4-8"></path>
+							<path
+								d="m 28.757,217.225 c 0.589,0.119 1.178,0.179 1.749,0.179 3.959,0 7.509,-2.765 8.354,-6.793 3.516,-16.922 9.122,-33.314 16.461,-48.922 1.442,0.256 2.901,0.444 4.412,0.444 14.114,0 25.6,-11.486 25.6,-25.6 0,-14.114 -11.486,-25.6 -25.6,-25.6 -14.114,0 -25.6,11.486 -25.6,25.6 0,6.391 2.44,12.177 6.323,16.666 -8.201,17.186 -14.421,35.268 -18.313,53.931 -0.963,4.616 2.006,9.139 6.614,10.095 z M 59.733,128 c 4.71,0 8.533,3.831 8.533,8.533 0,4.702 -3.823,8.533 -8.533,8.533 -4.71,0 -8.533,-3.831 -8.533,-8.533 0,-4.702 3.823,-8.533 8.533,-8.533 z"
+							></path>
+							<path
+								d="M 206.251,472.192 C 114.68,451.217 45.56,372.557 35.627,279.552 44.766,275.644 51.2,266.556 51.2,256 51.2,241.886 39.714,230.4 25.6,230.4 11.486,230.4 0,241.886 0,256 c 0,11.665 7.885,21.419 18.577,24.499 10.359,100.54 84.958,185.677 183.859,208.333 0.64,0.145 1.28,0.213 1.911,0.213 3.891,0 7.407,-2.671 8.311,-6.63 1.051,-4.591 -1.816,-9.173 -6.407,-10.223 z M 25.779,264.499 c -0.043,0 -0.077,-0.017 -0.111,-0.017 -0.051,0.009 -0.085,0.034 -0.137,0.043 -4.676,-0.043 -8.465,-3.84 -8.465,-8.525 0,-4.702 3.823,-8.533 8.533,-8.533 4.71,0 8.533,3.831 8.533,8.533 0.001,4.642 -3.736,8.397 -8.353,8.499 z"
+							></path>
+							<path
+								d="m 483.226,294.827 c -4.685,-0.964 -9.139,1.997 -10.103,6.613 -4.881,23.467 -13.534,45.474 -25.156,65.493 h -42.453 c -4.719,0 -8.533,3.823 -8.533,8.533 0,4.71 3.814,8.533 8.533,8.533 h 31.522 c -34.79,48.973 -88.866,82.927 -150.17,91.529 18.731,-14.754 44.698,-39.441 66.253,-75.025 1.707,0.367 3.473,0.563 5.282,0.563 14.114,0 25.6,-11.486 25.6,-25.6 0,-7.834 -3.618,-14.78 -9.182,-19.482 11.708,-31.189 17.715,-64.768 17.715,-99.985 0,-35.977 -5.675,-69.82 -16.734,-100.796 5.018,-4.676 8.201,-11.29 8.201,-18.671 0,-14.114 -11.486,-25.6 -25.6,-25.6 -1.084,0 -2.125,0.188 -3.174,0.324 -24.201,-41.233 -54.707,-67.038 -74.163,-80.469 0.358,-1.673 0.538,-3.413 0.538,-5.188 C 281.6,11.486 270.114,0 256,0 244.386,0 234.667,7.825 231.543,18.441 173.457,24.354 119.91,51.098 80.137,94.353 c -3.191,3.465 -2.961,8.866 0.503,12.049 1.647,1.51 3.712,2.253 5.777,2.253 2.295,0 4.599,-0.922 6.281,-2.756 C 127.787,67.746 174.413,43.426 225.212,36.386 203.17,53.709 172.322,83.644 149.564,128 h -42.897 c -4.719,0 -8.533,3.823 -8.533,8.533 0,4.71 3.814,8.533 8.533,8.533 h 34.91 c -12.271,28.732 -20.685,62.763 -21.777,102.4 h -43 c -4.719,0 -8.533,3.823 -8.533,8.533 0,4.71 3.814,8.533 8.533,8.533 h 42.982 c 1.007,39.97 8.721,73.975 20.198,102.4 h -33.314 c -4.719,0 -8.533,3.823 -8.533,8.533 0,4.71 3.814,8.533 8.533,8.533 h 40.917 c 24.917,50.825 60.672,81.596 83.345,97.229 -0.35,1.673 -0.529,3.396 -0.529,5.171 0,14.114 11.486,25.6 25.6,25.6 11.665,0 21.419,-7.885 24.491,-18.568 102.656,-10.539 188.237,-87.04 209.348,-188.518 0.965,-4.607 -2.004,-9.13 -6.612,-10.085 z M 358.4,384 c -4.71,0 -8.533,-3.831 -8.533,-8.533 0,-4.702 3.823,-8.533 8.533,-8.533 4.71,0 8.533,3.831 8.533,8.533 0,4.702 -3.823,8.533 -8.533,8.533 z m 0,-256 c 4.71,0 8.533,3.831 8.533,8.533 0,4.702 -3.823,8.533 -8.533,8.533 -4.71,0 -8.533,-3.831 -8.533,-8.533 0,-4.702 3.823,-8.533 8.533,-8.533 z M 256,17.067 c 4.71,0 8.533,3.831 8.533,8.533 0,4.702 -3.823,8.533 -8.533,8.533 -4.651,0 -8.414,-3.746 -8.499,-8.38 0,-0.026 0.009,-0.051 0.009,-0.085 0,-0.043 -0.026,-0.068 -0.034,-0.111 0.025,-4.684 3.831,-8.49 8.524,-8.49 z M 264.533,256 c 0,4.702 -3.823,8.533 -8.533,8.533 -4.71,0 -8.533,-3.831 -8.533,-8.533 0,-4.702 3.823,-8.533 8.533,-8.533 4.71,0 8.533,3.831 8.533,8.533 z M 163.046,376.644 c 0.051,-0.401 0.239,-0.759 0.239,-1.178 0,-2.978 -1.621,-5.478 -3.934,-6.997 C 145.894,338.312 136.533,301.286 136.533,256 c 0,-46.464 10.812,-84.949 26.069,-116.122 0.009,-0.017 0.009,-0.026 0.017,-0.043 23.211,-47.428 56.67,-77.892 78.063,-93.85 2.048,1.545 4.318,2.765 6.784,3.635 V 128 h -59.733 c -4.719,0 -8.533,3.823 -8.533,8.533 0,4.71 3.814,8.533 8.533,8.533 h 59.733 v 86.904 c -7.236,2.577 -12.919,8.269 -15.488,15.497 h -69.845 c -4.719,0 -8.533,3.823 -8.533,8.533 0,4.71 3.814,8.533 8.533,8.533 h 69.845 c 2.569,7.228 8.252,12.919 15.488,15.488 v 86.912 h -59.733 c -4.719,0 -8.533,3.823 -8.533,8.533 0,4.71 3.814,8.533 8.533,8.533 h 59.733 v 78.37 c -2.799,0.998 -5.333,2.466 -7.595,4.309 -21.102,-14.693 -53.844,-43.237 -76.825,-90.034 z M 256,494.933 c -4.71,0 -8.533,-3.831 -8.533,-8.533 0,-4.702 3.823,-8.533 8.533,-8.533 4.651,0 8.414,3.746 8.499,8.38 0,0.026 -0.009,0.051 -0.009,0.085 0,0.043 0.026,0.068 0.034,0.119 -0.033,4.677 -3.831,8.482 -8.524,8.482 z m 15.309,-28.928 c -2.048,-1.536 -4.318,-2.756 -6.776,-3.635 V 280.03 C 274.44,276.489 281.6,267.111 281.6,256 c 0,-11.111 -7.159,-20.489 -17.067,-24.03 V 49.63 c 2.79,-0.998 5.325,-2.458 7.578,-4.301 17.971,12.527 45.619,36.19 67.806,73.583 -2.458,2.569 -4.326,5.666 -5.538,9.088 h -48.512 c -4.719,0 -8.533,3.823 -8.533,8.533 0,4.71 3.814,8.533 8.533,8.533 h 48.512 c 3.533,9.916 12.911,17.067 24.021,17.067 0.58,0 1.126,-0.137 1.69,-0.171 9.293,26.394 14.396,55.074 15.198,85.504 H 307.2 c -4.719,0 -8.533,3.823 -8.533,8.533 0,4.71 3.814,8.533 8.533,8.533 h 68.079 c -0.879,30.012 -6.391,58.667 -16.401,85.385 -0.162,-0.009 -0.307,-0.051 -0.478,-0.051 -11.11,0 -20.489,7.151 -24.021,17.067 h -48.512 c -4.719,0 -8.533,3.823 -8.533,8.533 0,4.71 3.814,8.533 8.533,8.533 h 48.512 c 0.981,2.765 2.423,5.291 4.25,7.526 -22.273,36.814 -49.639,61.279 -67.32,74.48 z"
+							></path>
+						</g>
+					</g>
+				</g>
+			</svg>
+		</div>
+		<div class="textContainer">
+			<h1>Bienvenido a Infralabs</h1>
+			<h3>
+				Elevando tu infraestructura al siguiente nivel de la mano de expertos
+			</h3>
+			<p>
+				Desde Infralabs ponemos diseñamos la arquitectura que necesitas y la
+				mantenemos al día para que te puedas centrar en tu producto sin
+				preocupaciones
+			</p>
+			<a href="">Contacta ahora</a>
+		</div>
 	</section>
 	<section>
 		<h2>Conoce nuestros servicios</h2>
-		<p>Migración, altas, Disaster Recovery, Preparación para auditorias, asesoramiento, soporte</p>
+		<p>
+			Migración, altas, Disaster Recovery, Preparación para auditorias,
+			asesoramiento, soporte
+		</p>
 	</section>
 	<section>
-		<h2>Porque se duerme bien... <br>
-			Cuando tu web está en buenas manos
+		<h2>
+			Porque se duerme bien... <br />
+			 Cuando tu web está en buenas manos
 		</h2>
-		<p>Sabemos que el estres causa insomnio por lo que, gracias a nuestros sistemas de monitorización, arquitecturas de alta disponibilidad y backups redundantes, te podemos garantizar tiempos de funcionamiento del 99%</p>
+		<p>
+			Sabemos que el estres causa insomnio por lo que, gracias a nuestros
+			sistemas de monitorización, arquitecturas de alta disponibilidad y
+			backups redundantes, te podemos garantizar tiempos de funcionamiento del
+			99%
+		</p>
 	</section>
 	<section>
 		<h2>Ahorra sin perder servicio</h2>
-		<p>Desde Infralabs siempre nos mantenemos al tanto del uso y coste de tu plataforma por lo que te asesoraremos sobre cómo reajustar los servicios y sobre los proveedores que mejor se ajustan a tus necesidades en cada etapa de tu producto</p>
+		<p>
+			Desde Infralabs siempre nos mantenemos al tanto del uso y coste de tu
+			plataforma por lo que te asesoraremos sobre cómo reajustar los servicios
+			y sobre los proveedores que mejor se ajustan a tus necesidades en cada
+			etapa de tu producto
+		</p>
 	</section>
 	<section>
 		<h2>Porque la comunicación es importante</h2>
-		<p>Siempre estamos ahí para ayudarte. Te explicaremos y asesoraremos sobre cualquier cuestión que tengas, agendando reuniones o por correo electrónico</p>
+		<p>
+			Siempre estamos ahí para ayudarte. Te explicaremos y asesoraremos sobre
+			cualquier cuestión que tengas, agendando reuniones o por correo
+			electrónico
+		</p>
 	</section>
 	<section>
 		<h2>De la complejidad a la simpleza</h2>
-		<p>Nuestra empresa cree firmemente en la transmisión de conocimiento. Por ello tenemos montado un blog en el que te iremos informando de las últimas novedades en el mundo de la infraestructura y la seguridad</p>
+		<p>
+			Nuestra empresa cree firmemente en la transmisión de conocimiento. Por
+			ello tenemos montado un blog en el que te iremos informando de las
+			últimas novedades en el mundo de la infraestructura y la seguridad
+		</p>
 		<a href="">blog</a>
 	</section>
 	<section>
 		<h2>Con más llaves que el sepulcro del Cid</h2>
-		<p>Tus datos están a salvo con Infralabs. Desde las comunicaciones contigo a tus servidores, Infralabs se asegura de que toda información sensible cuente con todo el blindaje posible</p>
+		<p>
+			Tus datos están a salvo con Infralabs. Desde las comunicaciones contigo
+			a tus servidores, Infralabs se asegura de que toda información sensible
+			cuente con todo el blindaje posible
+		</p>
 	</section>
 	<section>
 		<h2>Porque cuando uno está a gusto echa raíces</h2>
 		<p>carrusel con clientes</p>
 	</section>
 	<section>
-		<h2>Nuestros proveedores</h2>
-		<p>otro carrusel</p>
+		<h2>Alojamos tu aplicación en tu hosting preferido</h2>
+		<div class="providersContainer">
+			<img src="/svgs/iconos/proveedores/aws.svg" alt="e" />
+			<img src="/svgs/iconos/proveedores/azure.svg" alt="e" />
+			<img src="/svgs/iconos/proveedores/digital-ocean.svg" alt="e" />
+			<img src="/svgs/iconos/proveedores/google-cloud.svg" alt="e" />
+			<img src="/svgs/iconos/proveedores/hetzner.svg" alt="e" />
+			<img src="/svgs/iconos/proveedores/ovh.svg" alt="e" />
+		</div>
 	</section>
+</div>
 </Layout>
-
 <style>
-	section:first-of-type{
-		margin-top: 0;
+  section:first-of-type {
+    margin-top: 0;
+  }
+  section {
+    margin: 1.5rem 0;
+  }
+  .bienvenida {
+    display: flex;
+    gap: 2rem;
+  }
+  .serverContainer {
+    width: 30rem;
+  }
+
+  .cara {
+    stroke: #2a81a8;
+    stroke-width: 0.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .top {
+    fill: #091319;
+    stroke: #091319;
+    stroke-width: 0.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .izquierda {
+    fill: url(#GradienteDirecto);
+  }
+
+  .derecha {
+    fill: url(#GradienteReverso);
+  }
+
+  .arriba {
+    fill: #99d7ff;
+  }
+
+  .globo_terraqueo {
+    fill: #2a81a8;
+  }
+	linearGradient .centro{
+		stop-color: rgb(var(--azul));
 	}
-	section{
-		margin: 1.5rem 0;
+	linearGradient .borde{
+		stop-color: rgb(var(--oscuro));
+	}
+  .texto {
+    font-size: 3.5px;
+    font-family: System-ui;
+    fill: #99d7ff;
+  }
+
+  .matraz {
+    fill: #99d7ff;
+  }
+  .providersContainer {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-around;
+		flex-wrap: wrap;
+  }
+  :global(.dark) .providersContainer img {
+    filter: grayscale(1) invert(1);
+  }
+  .providersContainer img {
+    filter: grayscale(1);
+    width: 4rem;
+    padding: 0.5rem;
+  }
+  .providersContainer img:hover {
+    border-radius: 20px;
+    filter: grayscale(0) invert(0);
+  }
+	@media (width <= 700px){
+		.providersContainer img{
+			width: 2.5rem;
+			padding: 0.15rem;
+		}
+		.bienvenida{
+			flex-direction: column-reverse;
+			align-items: center;
+		}
+		.serverContainer{
+			width: 12rem;
+		}
 	}
 </style>

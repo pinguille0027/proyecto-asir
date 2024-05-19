@@ -10,13 +10,8 @@
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs id="defs2">
-          <linearGradient id="linearGradient76208">
-            <stop offset="0.65" class="stop_inicio"></stop>
-            <stop offset="1" class="stop_final"></stop>
-          </linearGradient>
           <radialGradient
-            xlink:href="#linearGradient76208"
-            id="radialGradient76210-7-6-6"
+            id="gradientLogo"
             cx="139.36299"
             cy="157.79147"
             fx="139.36299"
@@ -24,7 +19,8 @@
             r="9.9529543"
             gradientUnits="userSpaceOnUse"
             gradientTransform="matrix(0.92987653,0,0,0.92987653,9.7848923,11.064257)"
-          ></radialGradient>
+          ><stop offset="0.65" class="stop_inicio"></stop>
+          <stop offset="1" class="stop_final"></stop></radialGradient>
           <filter
             style="color-interpolation-filters:sRGB"
             id="filter84299"
@@ -107,10 +103,9 @@
   .circulo {
     /*con gradiente*/
     mix-blend-mode: normal;
-    fill: url(#radialGradient76210-7-6-6);
-    filter: url(#filter84299);
+    fill: url(#gradientLogo);
+   
     /*sin gradiente*/
-    fill:;
   }
   .globo_terraqueo {
     fill: rgb(var(--turquesa));

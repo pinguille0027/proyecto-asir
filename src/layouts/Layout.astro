@@ -140,13 +140,7 @@ const { title, author } = Astro.props;
   Footer {
     flex-shrink: 0;
   }
-  @media (width <= 700px) {
-    main {
-      width: auto;
-      padding: 2rem;
-    }
-  }
-
+ 
   code {
     font-family:
       Menlo,
@@ -164,5 +158,23 @@ const { title, author } = Astro.props;
   }
   h1{
     font-size: 2rem;
+  }
+  @media (width <= 700px) {
+    main {
+      width: 90vw;
+      padding: 1rem;
+    }
+    p{
+      font-size: 0.85rem;
+    }
+    h1{
+      font-size: 1.85rem;
+    }
+    h2{
+      font-size: 1.25rem;
+    }
+    h3{
+      font-size: 1.05rem;
+    }
   }
 </style>
