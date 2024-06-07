@@ -1,6 +1,6 @@
 ---
 export const prerender = false;
-import { GET } from '../pages/api/getcomments.ts'
+import { GET } from '../pages/api/getcomments.json.ts'
 import CommentCard from './CommentCard.astro';
 
 let response = await GET(Astro)
@@ -13,4 +13,4 @@ const comments = await response.json()
  }
 
 <style>
-</style>
+</style>../pages/api/getcomments.json.ts

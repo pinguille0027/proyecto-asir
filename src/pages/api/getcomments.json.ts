@@ -1,8 +1,15 @@
+export const prerender = false;
 
-import { getCollection } from "astro:content";
 import { supabase } from "../../lib/supabase";
 import type { APIRoute } from "astro";
 export const GET: APIRoute = async ({ request, params, props }) => {
+  const url = new URL(request.url);
+
+  // Obtener los parámetros de la query
+  const queryParams = url.searchParams;
+
+  // Obtener el valor del parámetro 'post'
+  const postParam = queryParams.get('post');
   const { data, error } = await supabase
     .from("comentarios")
     .select(
@@ -10,7 +17,7 @@ export const GET: APIRoute = async ({ request, params, props }) => {
     id, created_at, perfiles ( nombre ), contenido, id_ref
     `
     )
-    .eq("id_post", `${params.slug}`);
+    .eq("id_post", `${postParam}`);
 
   if (error || !data) {
     return new Response(error.message, { status: 500 });
