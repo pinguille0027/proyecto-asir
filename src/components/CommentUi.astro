@@ -3,7 +3,7 @@ export const prerender = false;
 import CommentCard from './CommentCard.astro';
 
 const {slug} = Astro.props
-let response = await fetch(`http://localhost:4321/api/comments.json?post=${slug}`)
+let response = await fetch(`http://localhost:4321/api/getcomments.json?post=${slug}`)
 const comments = await response.json()
 ---
 <h1>Comentarios</h1>
@@ -13,4 +13,4 @@ const comments = await response.json()
  }
 
 <style>
-</style>../pages/api/getcomments.json.ts
+</style>

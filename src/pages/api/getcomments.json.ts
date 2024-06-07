@@ -65,4 +65,5 @@ export const GET: APIRoute = async ({ request, params, props }) => {
   return new Response(JSON.stringify(comentariosAgrupados), {
     status: 200,
   });
+  
 };
