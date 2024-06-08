@@ -7,7 +7,7 @@ const subpath = pathname.match(/[^/]+/g);
 <nav>
   <Themetoggler/>
   <a
-    href="/"
+    href="/contacto"
     class={pathname === "/contacto" || "/" + subpath?.[0] === "/contacto"
       ? "activo"
       : " "}
@@ -99,7 +99,7 @@ const subpath = pathname.match(/[^/]+/g);
       <title>Nuestra Escuela</title>
       <path
         d="M21 10L12 5L3 10L6 11.6667M21 10L18 11.6667M21 10V10C21.6129 10.3064 22 10.9328 22 11.618V16.9998M6 11.6667L12 15L18 11.6667M6 11.6667V17.6667L12 21L18 17.6667L18 11.6667"
-        stroke-width="2"
+        
         stroke-linecap="round"
         stroke-linejoin="round"></path>
     </svg>
@@ -151,14 +151,14 @@ const subpath = pathname.match(/[^/]+/g);
   .escuela {
     stroke: rgb(var(--secundario));
     fill: none;
+    stroke-width: 1.7px;
   }
   .nosotros {
     stroke-miterlimit: 10;
-    stroke-width: 1.91px;
+    
   }
   .contacto {
       stroke-linecap: round;
-      stroke-width: 1.5px;
     .cls-1 {
       stroke-linejoin: bevel;
       fill-rule: evenodd;

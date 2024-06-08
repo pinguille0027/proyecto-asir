@@ -107,16 +107,16 @@ const { title, author } = Astro.props;
     --fondo: var(--blanco);
     --secundario: var(--turquesa);
     --terciario: var(--azul);
-    
+    --letra: var(--oscuro);
     font-family: system-ui, sans-serif;
     height: 100%;
-    color: rgb(var(--oscuro));
+    color: rgb(var(--letra));
     transition: color 1s cubic-bezier(0.4, 0, 0.2, 1), background-color 1s cubic-bezier(0.4, 0, 0.2, 1);
   }
   html.dark {
     --fondo: var(--oscuro);
+    --letra: var(--blanco);
     background: rgb(var(--fondo));
-    color: rgb(var(--blanco));
   }
   * {
     margin: 0;
@@ -140,13 +140,7 @@ const { title, author } = Astro.props;
   Footer {
     flex-shrink: 0;
   }
-  @media (width <= 700px) {
-    main {
-      width: auto;
-      padding: 2rem;
-    }
-  }
-
+ 
   code {
     font-family:
       Menlo,
@@ -164,5 +158,23 @@ const { title, author } = Astro.props;
   }
   h1{
     font-size: 2rem;
+  }
+  @media (width <= 700px) {
+    main {
+      width: 90vw;
+      padding: 1rem;
+    }
+    p{
+      font-size: 0.85rem;
+    }
+    h1{
+      font-size: 1.85rem;
+    }
+    h2{
+      font-size: 1.25rem;
+    }
+    h3{
+      font-size: 1.05rem;
+    }
   }
 </style>

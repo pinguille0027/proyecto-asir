@@ -1,9 +1,9 @@
 ---
-
-import { GET } from '../api/comments.ts'
+export const prerender = false;
 import CommentCard from './CommentCard.astro';
 
-let response = await GET(Astro)
+const {slug} = Astro.props
+let response = await fetch(`http://localhost:4321/api/getcomments.json?post=${slug}`)
 const comments = await response.json()
 ---
 <h1>Comentarios</h1>

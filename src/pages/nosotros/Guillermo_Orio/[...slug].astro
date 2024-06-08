@@ -15,5 +15,5 @@ const { Content } = await entry.render();
 
 <Layout title={entry.data.title} author={entry.data.author} >
   <Content />
-  <CommentUi/>
+  <CommentUi slug={entry.slug}/>
 </Layout>
