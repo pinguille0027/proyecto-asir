@@ -1,12 +1,11 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 
-export default function ContactForm() {
-  const [responseMessage, setResponseMessage] = useState("Enviar");
+export default function CommentForm() {
+  const [responseMessage, setResponseMessage] = useState("");
 
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setResponseMessage("Enviando")
     const formData = new FormData(e.target as HTMLFormElement);
     const response = await fetch("/api/contacto", {
       method: "POST",
@@ -17,8 +16,6 @@ export default function ContactForm() {
     if (data.message) {
       setResponseMessage(data.message);
     }
-    setInterval(() => {window.location.href = "/"}, 2000)
-    
   }
 
   return (
@@ -27,9 +24,6 @@ export default function ContactForm() {
       <h2>Cuentanos quien eres</h2>
       <label htmlFor="nombre">Tu nombre:</label>
       <input id="nombre" type="text" name="nombre" required/>
-
-      <label htmlFor="empresa">El nombre de tu compañía/proyecto:</label>
-      <input id="empresa" type="text" name="empresa" required/>
     </section>
     <section>
       <h2>Háblanos de tu proyecto</h2>
@@ -52,7 +46,8 @@ export default function ContactForm() {
         name="telefono"
       />
     </section>
-      <button>{responseMessage}</button>
+      <button>Enviar</button>
+      {responseMessage && <p>{responseMessage}</p>}
     </form>
   );
 }
