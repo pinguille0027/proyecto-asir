@@ -12,7 +12,7 @@ export const POST: APIRoute = async ({ request }) => {
     if (telefono === ""){
       telefono= null
     }
-    const { data:supadata, error } = await supabase
+    const { error } = await supabase
       .from("citas")
       .insert({
         empresa: empresa,
