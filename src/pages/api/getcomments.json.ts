@@ -2,7 +2,7 @@ export const prerender = false;
 
 import { supabase } from "../../lib/supabase";
 import type { APIRoute } from "astro";
-export const GET: APIRoute = async ({ request, params, props }) => {
+export const GET: APIRoute = async ({ request }) => {
   const url = new URL(request.url);
 
   // Obtener los parámetros de la query
