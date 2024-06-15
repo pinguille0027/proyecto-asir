@@ -3,33 +3,27 @@ import type { APIRoute } from "astro";
 export const prerender = false;
 export const POST: APIRoute = async ({ request }) => {
   const prisma = new PrismaClient();
+  
   try {
+    const url = new URL(request.url);
+    const queryParams = url.searchParams;
+    const postParam = queryParams.get("post");
+    const refParam = queryParams.get("ref");
     const data = await request.formData();
     const nombre = data.get("nombre");
-    const email = data.get("email");
-    const empresa = data.get("empresa");
-    const descripcion = data.get("descripcion");
-    let telefono = data.get("telefono");
-
-    // Verifica si el teléfono es una cadena vacía y conviértelo en null
-    if (!telefono) {
-      telefono = null;
-    }
+    const contenido = data.get("comentario");
 
     // Inserta la nueva cita en la base de datos utilizando Prisma
-    const nuevaCita = await prisma.citas.create({
+    const newComment = await prisma.comentarios.create({
       data: {
-        empresa: empresa as string,
-        nombre: nombre as string,
-        email: email as string,
-        telefono: telefono ? parseInt(telefono as string) : null,
-        descripcion: descripcion as string,
-        fecha_reunion: null,
-        documentacion: null,
+        autor: nombre as string,
+        contenido: contenido as string,
+        id_post: postParam as string,
+        id_ref: refParam ? parseInt(refParam as string) : null,
       },
     });
 
-    console.log("Cita creada:", nuevaCita);
+    console.log("Cita creada:", newComment);
 
     // Retorna una respuesta con un mensaje de éxito
     return new Response(
@@ -39,12 +33,13 @@ export const POST: APIRoute = async ({ request }) => {
       { status: 200 }
     );
   } catch (error) {
-    console.error("Error al crear la cita:", error);
+    console.error("Error", error);
 
     // Retorna una respuesta con un mensaje de error
     return new Response(
       JSON.stringify({
         error: "Ha ocurrido un error al procesar la solicitud.",
+        message: "error"
       }),
       { status: 500 }
     );

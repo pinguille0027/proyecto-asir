@@ -13,11 +13,10 @@ export default function ContactForm() {
       body: formData,
     });
     const data = await response.json();
-    console.log(data)
     if (data.message) {
       setResponseMessage(data.message);
     }
-    setInterval(() => {window.location.href = "/"}, 2000)
+    setInterval(() => {window.location.href = "/"}, 5)
     
   }
 

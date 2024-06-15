@@ -1,16 +1,15 @@
 ---
 export const prerender = false;
 import CommentCard from './CommentCard.astro';
-
+import CommentForm from './CommentForm'
 const {slug} = Astro.props
 let response = await fetch(`http://localhost:4321/api/getcomments.json?post=${slug}`)
 const comments = await response.json()
 ---
 <h1>Comentarios</h1>
-{Array.isArray(comments) && comments.length > 0 ? comments.map((comment) =>
-  <CommentCard comment={comment}/>
-  ) : <p>sin comentarios</p>
+
+{ Array.isArray(comments) && comments.length > 0 ? <><CommentForm slug={slug} client:load/> {comments.map((comment) =>
+  <CommentCard comment={comment} slug={slug}/>
+)}</> : <p>sin comentarios</p> <CommentForm slug={slug} client:load/>
  }
 
-<style>
-</style>

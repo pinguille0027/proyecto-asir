@@ -13,21 +13,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 model comentarios {
-  id         BigInt    @id @default(autoincrement())
+  id         Int    @id @default(autoincrement())
   created_at  DateTime  @default(now())
   autor      String?
   contenido  String?
   id_post     String?
-  id_ref      BigInt?
+  id_ref      Int?
 }
 
 model citas {
-  id             BigInt    @id @default(autoincrement())
+  id             Int    @id @default(autoincrement())
   created_at      DateTime  @default(now())
   empresa        String?
   nombre         String?
   email          String?
-  telefono       BigInt?
+  telefono       Int?
   descripcion    String?
   metodo_contacto String?
   fecha_reunion   DateTime?

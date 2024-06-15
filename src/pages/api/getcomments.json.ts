@@ -2,63 +2,81 @@ export const prerender = false;
 import { PrismaClient } from "@prisma/client";
 import type { APIRoute } from "astro";
 
-function agruparComentarios(comentarios: any[]) {
-  const comentariosAgrupados: any[] = [];
-  comentarios.sort((a, b) => b.id - a.id);
-  const respuestasProcesadas: any[] = [];
 
-  comentarios.forEach((comentario) => {
-    if (
-      respuestasProcesadas.find(
-        (resp: any) => resp.id_ref === comentario.id
-      )
-    ) {
-      const respuestas = respuestasProcesadas.filter(
-        (respuesta: any) => respuesta.id_ref === comentario.id
-      );
-      if (respuestas.length > 0) {
-        if (!comentario.respuestas) {
-          comentario.respuestas = [];
-        }
-        comentario.respuestas.push(respuestas);
-        comentario.respuestas = comentario.respuestas.flat();
-        if (comentario.id_ref) {
-          respuestasProcesadas.push(comentario);
-        } else {
-          comentariosAgrupados.push(comentario);
-        }
-      }
-    } else {
-      const respuestas = comentarios.filter(
-        (respuesta) => respuesta.id_ref === comentario.id
-      );
-      if (respuestas.length > 0) {
-        if (!comentario.respuestas) {
-          comentario.respuestas = [];
-        }
-        comentario.respuestas.push(respuestas);
-        comentario.respuestas = comentario.respuestas.flat();
-        respuestasProcesadas.push(comentario);
-      }
-    }
+interface Comment {
+  id: bigint;
+  created_at: Date;
+  autor: string | null;
+  contenido: string | null;
+  id_post: string | null;
+  id_ref: bigint | null;
+}
+
+type PopulatedComment = Comment & { respuestas: Array<PopulatedComment> }
+
+function sortRespuestas(populatedComment: PopulatedComment): void {
+  if (populatedComment.respuestas.length === 0) { return; }
+
+  populatedComment.respuestas.forEach((respuesta) => {
+    sortRespuestas(respuesta);
   });
 
-  return comentariosAgrupados;
+  populatedComment.respuestas.sort((a, b) => Number(a.id) - Number(b.id));
 }
+
+function aggregateComments(comments: Array<Comment>): Array<PopulatedComment> {
+  const hashSet = new Map<bigint, PopulatedComment>();
+
+  for (let i = 0; i < comments.length; i++) {
+    const comment = comments[i];
+
+    hashSet.set(comment.id, {...comment, respuestas: []});
+  }
+
+  for (let i = 0; i < comments.length; i++) {
+    const stepComment = comments[i];
+
+    const hashItem = hashSet.get(stepComment.id);
+
+    if (!hashItem) {
+      throw new Error("Found incorrect");
+    }
+
+    if (hashItem.id_ref === null) {
+      continue;
+    }
+
+    const parent = hashSet.get(hashItem.id_ref);
+    if (!parent) {
+      throw new Error("Found incorrect");
+    }
+
+    parent.respuestas.push(hashItem)
+  }
+
+  const rootComments = Array
+    .from(hashSet, ([key, val]) => val)
+    .filter((comment) => !comment.id_ref);
+
+  rootComments.forEach((comment) => {
+    sortRespuestas(comment);
+  });
+
+  return rootComments;
+}
+
 
 export const GET: APIRoute = async ({ request }) => {
   const prisma = new PrismaClient();
-  console.log(prisma)
   const url = new URL(request.url);
   const queryParams = url.searchParams;
   const postParam = queryParams.get("post");
-
   try {
     const data = await prisma.comentarios.findMany({
       where: { id_post: postParam },
     });
-    const comentariosAgrupados = agruparComentarios(data);
-    console.log(comentariosAgrupados)
+
+    const comentariosAgrupados = aggregateComments(data);
     return new Response(JSON.stringify(comentariosAgrupados), {
       status: 200,
     });

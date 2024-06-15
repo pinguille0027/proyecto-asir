@@ -1,28 +1,46 @@
 ---
-const {reply}=Astro.props
+const { reply, slug } = Astro.props;
+import CommentForm from "./CommentForm";
+
 ---
 
-<article class={Array.isArray(reply.respuestas) && reply.respuestas.length > 0 ? 'hilo' : ''}>
+<article
+  class={Array.isArray(reply.respuestas) && reply.respuestas.length > 0
+    ? "hilo"
+    : ""}
+>
   <section>
-    <h4>{reply.perfiles.nombre}</h4> 
-   </section>
-   <section>
+    <h4>{reply.autor}</h4>
+  </section>
+  <section>
     <p>{reply.contenido}</p>
-   </section>
-    <section><span>{new Date(reply.created_at).toLocaleDateString('es-ES')}</span></section>
+  </section>
+  <section class="date">
+    <span>{new Date(reply.created_at).toLocaleDateString("es-ES")}</span>
+  </section>
   
+  <CommentForm slug={slug} id={reply.id} client:load />
   <section>
-    {Array.isArray(reply.respuestas) && reply.respuestas.length > 0 ? reply.respuestas.map((respuesta:any) =>
-    <Astro.self reply={respuesta}/>
-    
-    ) : null}
+    {
+      Array.isArray(reply.respuestas) && reply.respuestas.length > 0
+        ? reply.respuestas.map((respuesta: any) => (
+            <Astro.self reply={respuesta} slug={slug} />
+          ))
+        : null
+    }
   </section>
 </article>
 <style>
   article{
-      padding-left: 0.5rem;
-    }
+    padding-left: 0.5rem;
+    margin-top: 1rem;
+  }
   .hilo{
-    border-left: 1px solid white;
+    border-left: 1px solid rgb(var(--celeste));
+    border-top: 1px solid rgb(var(--celeste));
+  }
+  .date{
+    font-size: 0.75rem;
+    text-align: end;
   }
 </style>
