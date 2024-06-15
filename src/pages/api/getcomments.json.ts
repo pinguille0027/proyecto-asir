@@ -4,12 +4,12 @@ import type { APIRoute } from "astro";
 
 
 interface Comment {
-  id: bigint;
+  id: number;
   created_at: Date;
   autor: string | null;
   contenido: string | null;
   id_post: string | null;
-  id_ref: bigint | null;
+  id_ref: number | null;
 }
 
 type PopulatedComment = Comment & { respuestas: Array<PopulatedComment> }
@@ -25,7 +25,7 @@ function sortRespuestas(populatedComment: PopulatedComment): void {
 }
 
 function aggregateComments(comments: Array<Comment>): Array<PopulatedComment> {
-  const hashSet = new Map<bigint, PopulatedComment>();
+  const hashSet = new Map<number, PopulatedComment>();
 
   for (let i = 0; i < comments.length; i++) {
     const comment = comments[i];
